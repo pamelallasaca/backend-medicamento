@@ -24,23 +24,21 @@ import com.empresa.util.Constantes;
 public class AlumnoController {
 
 	@Autowired
-	private AlumnoService service;
+	private AlumnoService alumnoService;
 
 	@GetMapping
 	@ResponseBody
 	public ResponseEntity<List<Alumno>> listaAlumno(){
-		List<Alumno> lista = service.listaAlumno();
+		List<Alumno> lista = alumnoService.listaAlumno();
 		return ResponseEntity.ok(lista);
 	}
 
 	@PostMapping
 	@ResponseBody
 	public  ResponseEntity<Map<String, Object>> insertaAlumno(@RequestBody Alumno obj){
-		
 		Map<String, Object> salida = new HashMap<>();
 		try {
-			
-			Alumno objSalida = service.insertaActualizaAlumno(obj);
+			Alumno objSalida = alumnoService.insertaActualizaAlumno(obj);
 			if (objSalida == null) {
 				salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
 			}else {
