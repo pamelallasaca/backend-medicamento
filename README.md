@@ -1,5 +1,5 @@
 # DAWII-Sesion03BackendFinalizado
-### Servicio Rest - Inicial
+### Servicio Rest - De una sola tabla
 
 ## Autor ✒️
 
